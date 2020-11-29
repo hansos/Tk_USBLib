@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Management; // need to add System.Management to your project references.
-using System.Text;
-using USBLib;
-using USBLib.Device;
+using Tk_USBLib.Device;
 
 namespace UsbTest
 {

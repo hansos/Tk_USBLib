@@ -1,8 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Management;
 
-namespace USBLib.Device
+namespace Tk_USBLib.Device
 {
     /// <summary>
     /// Encapsulates any method that takes an object and a USBDetectionEventArgs.
