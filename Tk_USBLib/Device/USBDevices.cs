@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Management;
 using System.Text;
 
-namespace USBLib.Device
+namespace Tk_USBLib.Device
 {
     public class USBDevices
     {

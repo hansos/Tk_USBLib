@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using USBLib;
+﻿using System.Text;
+using Tk_USBLib;
 
-namespace UsbTest
+namespace USBDemo
 {
     internal static class Tools
     {
@@ -34,7 +30,7 @@ namespace UsbTest
 
         }
 
-        internal static string DeviceEventDescriptionText(DeviceInfo deviceInfo, USBLib.Device.USBDetectionEventType action)
+        internal static string DeviceEventDescriptionText(DeviceInfo deviceInfo, Tk_USBLib.Device.USBDetectionEventType action)
         {
             StringBuilder sb = new();
             sb.AppendLine();
