@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46691C6F-2FCD-42BE-89E5-815FACCB8E61}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsbDemo", "UsbDemo\UsbDemo.csproj", "{789CBCF7-E401-4923-B1D1-BD9F0F8741DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tk_USBLib", "Tk_USBLib\Tk_USBLib.csproj", "{02F70214-14A2-4BC0-9071-0B77929B88DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{789CBCF7-E401-4923-B1D1-BD9F0F8741DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789CBCF7-E401-4923-B1D1-BD9F0F8741DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789CBCF7-E401-4923-B1D1-BD9F0F8741DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789CBCF7-E401-4923-B1D1-BD9F0F8741DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F70214-14A2-4BC0-9071-0B77929B88DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F70214-14A2-4BC0-9071-0B77929B88DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F70214-14A2-4BC0-9071-0B77929B88DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F70214-14A2-4BC0-9071-0B77929B88DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54E860C0-6528-4313-B0FA-EF8A332A60B4}
+	EndGlobalSection
+EndGlobal
