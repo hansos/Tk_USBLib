@@ -21,7 +21,8 @@ namespace USBDemo
 
             //Show currently installed devices:
             IUSBDevices usbDevices;
-            usbDevices = new USBHubDevices();
+            usbDevices = new USBDevices();
+            //usbDevices = new USBHubDevices();
             //usbDevices = new USBPnpDevices();
 
             var deviceInfos = usbDevices.GetAll();

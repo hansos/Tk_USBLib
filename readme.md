@@ -8,7 +8,8 @@ The goal with this project is to create one or several "easy to use" DotNet DLL'
 
 ### 2020-12-01
 - The Event Listener is now using Win32_PnPEntity to sence device insertion/removal.
-- The Device Detection class (USBDevices) replaced with two other classes. One using Win32_PnPEntity, another using Win32_USBHub.
+- The existing Device Detection class (USBDevices) replaced with two other classes. One using Win32_PnPEntity, another using Win32_USBHub.
+- A new Deveice Device Detection class (USBDevices)  class created, merging data from Win32_PnPEntity and Win32_USBHub.
 - An interface for the two Device Detection classes is added. 
 
 ### 2020-11-29 (Initial version)
@@ -23,11 +24,14 @@ The goal with this project is to create one or several "easy to use" DotNet DLL'
 
 #### Functions
 
-##### Tk_USBLib.Device.USBHubDevices.GetAll();
+##### Tk_USBLib.Device.USBDevices.GetAll();
 Returns a list of DeviceInfo for all devices found.
 
+##### Tk_USBLib.Device.USBHubDevices.GetAll();
+Returns a list of DeviceInfo for all devices found, using Win32_USBHub.
+
 ##### Tk_USBLib.Device.USBPnpDevices.GetAll();
-Returns a list of DeviceInfo for all devices found.
+Returns a list of DeviceInfo for all devices found, using Win32_PnPEntity.
 
 ##### Tk_USBLib.Device.USBDevices.GetAllProperties()
 Returns a string with Device Property names and values for for all devices found.
