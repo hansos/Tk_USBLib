@@ -12,6 +12,7 @@ The goal with this project is to create one or several "easy to use" DotNet DLL'
 - A new Deveice Device info class (USBDevices)  class created, merging data from Win32_PnPEntity and Win32_USBHub.
 - An interface for the two Device Info classes is added. 
 - The Device Info function GetAllProperties() deleted.
+- Project version numbering implemented.
 
 ### 2020-11-29 (Initial version)
 - Reading information about devices inserted. 

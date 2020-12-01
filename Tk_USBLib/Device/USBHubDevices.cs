@@ -50,7 +50,5 @@ namespace Tk_USBLib.Device
            return null;
         }
 
-
-
     }
 }
