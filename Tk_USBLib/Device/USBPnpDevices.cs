@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace Tk_USBLib.Device
 {
+    /// <summary>
+    /// Read information from Pnp devices.
+    /// </summary>
     public class USBPnpDevices : IUSBDevices
     {
+        /// <summary>
+        /// Rerurns a list of DeviceInfo for all USB Pnp devices.
+        /// </summary>
+        /// <returns></returns>
         public List<DeviceInfo> GetAll()
         {
 
@@ -35,29 +42,15 @@ namespace Tk_USBLib.Device
 
         }
 
+        /// <summary>
+        /// Returns a DeviceInfo based on it's Device Id
+        /// </summary>
+        /// <param name="deviceId">Devcie Id to search</param>
+        /// <returns></returns>
         public DeviceInfo GetById(string deviceId)
         {
             throw new NotImplementedException();
         }
-
-
-        public string GetAllProperties()
-        {
-            StringBuilder sb = new();
-            List<DeviceInfo> allDevices = new();
-            ManagementObjectCollection devices;
-            ManagementScope scope = new ManagementScope(@"\\" + Environment.MachineName + @"\root\CIMV2");
-
-            using (var searcher = new ManagementObjectSearcher(@"Select * From Win32_PnPEntity"))
-                devices = searcher.Get();
-            foreach (var device in devices)
-                foreach (var property in device.Properties)
-                    sb.AppendLine($"{property.Name}={property.Value}");
-
-            return sb.ToString();
-        }
-
-
 
     }
 }

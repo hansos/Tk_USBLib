@@ -5,23 +5,20 @@ using System.Text;
 
 namespace Tk_USBLib.Device
 {
+    /// <summary>
+    /// Read information from HUB devices.
+    /// </summary>
     public class USBHubDevices : IUSBDevices
     {
-
-        public DeviceInfo GetById(string deviceId)
-        {
-            var devices = GetAll();
-            foreach (var device in devices)
-                if (device.DeviceId.Equals(deviceId.Trim()))
-                    return device;
-           return null;
-        }
-
+        /// <summary>
+        /// Rerurns a list of DeviceInfo for all USB HUB devices.
+        /// </summary>
+        /// <returns></returns>
         public List<DeviceInfo> GetAll()
         {
             try
             {
-                List<DeviceInfo> allDevices = new ();
+                List<DeviceInfo> allDevices = new();
                 ManagementObjectCollection devices;
 
                 using (var searcher = new ManagementObjectSearcher(@"Select * From Win32_USBHub"))
@@ -39,18 +36,18 @@ namespace Tk_USBLib.Device
             }
         }
 
-        public string GetAllProperties()
+        /// <summary>
+        /// Returns a DeviceInfo based on it's Device Id
+        /// </summary>
+        /// <param name="deviceId">Devcie Id to search</param>
+        /// <returns></returns>
+        public DeviceInfo GetById(string deviceId)
         {
-            StringBuilder sb = new();
-            ManagementObjectCollection devices;
-            using (var searcher = new ManagementObjectSearcher(@"Select * From Win32_USBHub"))
-                devices = searcher.Get();
-
+            var devices = GetAll();
             foreach (var device in devices)
-                foreach (var property in device.Properties)
-                    sb.AppendLine($"{property.Name}={property.Value}");
-
-            return sb.ToString();
+                if (device.DeviceId.Equals(deviceId.Trim()))
+                    return device;
+           return null;
         }
 
 
