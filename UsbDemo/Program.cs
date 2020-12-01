@@ -20,9 +20,15 @@ namespace USBDemo
             Console.WriteLine("--------------");
 
             //Show currently installed devices:
-            var deviceInfos = new USBDevices().GetAll();
+            IUSBDevices usbDevices;
+            usbDevices = new USBHubDevices();
+            //usbDevices = new USBPnpDevices();
+
+            var deviceInfos = usbDevices.GetAll();
             foreach (var deviceInfo in deviceInfos)
                 Console.WriteLine(Tools.DeviceDescriptionText(deviceInfo));
+
+
 
             //Start the listener
             USBDeviceDetection d = new();

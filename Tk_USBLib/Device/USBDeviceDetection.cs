@@ -53,12 +53,12 @@ namespace Tk_USBLib.Device
         /// </summary>
         public void Start()
         {
-            WqlEventQuery insertQuery = new WqlEventQuery("SELECT * FROM __InstanceCreationEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_USBHub'");
+            WqlEventQuery insertQuery = new WqlEventQuery("SELECT * FROM __InstanceCreationEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_PnPEntity'");
             ManagementEventWatcher insertWatcher = new ManagementEventWatcher(insertQuery);
             insertWatcher.EventArrived += new EventArrivedEventHandler(DeviceInsertedEvent);
             insertWatcher.Start();
 
-            WqlEventQuery removeQuery = new WqlEventQuery("SELECT * FROM __InstanceDeletionEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_USBHub'");
+            WqlEventQuery removeQuery = new WqlEventQuery("SELECT * FROM __InstanceDeletionEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_PnPEntity'");
             ManagementEventWatcher removeWatcher = new ManagementEventWatcher(removeQuery);
             removeWatcher.EventArrived += new EventArrivedEventHandler(DeviceRemovedEvent);
             removeWatcher.Start();
@@ -75,7 +75,7 @@ namespace Tk_USBLib.Device
         {
             //Todo: Can more information be added from the EventArrivedEventArgs?
             ManagementBaseObject instance = (ManagementBaseObject)e.NewEvent["TargetInstance"];
-            var deviceInfo = USBDevices.CreateDeviceInfo(instance, e.NewEvent);
+            var deviceInfo = DeviceInfoTools.CreateDeviceInfo(instance, e.NewEvent);
             return new USBDetectionEventArgs { Action = eventType, DeviceInfo = deviceInfo };
         }
 

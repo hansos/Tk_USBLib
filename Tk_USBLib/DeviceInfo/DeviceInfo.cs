@@ -1,8 +1,11 @@
-﻿namespace Tk_USBLib
+﻿using System.Management;
+
+namespace Tk_USBLib
 {
     public class DeviceInfo
     {
         #region string constants
+
         private const string V00 = "This device is working properly";
         private const string V01 = "This device is not configured correctly";
         private const string V02 = "Windows cannot load the driver for this device";
@@ -35,13 +38,13 @@
         private const string V29 = "This device is disabled because the firmware of the device did not give it the required resources";
         private const string V30 = "This device is using an Interrupt Request (IRQ) resource that another device is using";
         private const string V31 = "This device is not working properly because Windows cannot load the drivers required for this device";
+        
         #endregion
 
         #region Construction
 
         public DeviceInfo()
         {
-
         }
 
         public DeviceInfo(string deviceId, string pnpDeviceId, string description)
